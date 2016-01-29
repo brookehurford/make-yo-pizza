@@ -11,7 +11,7 @@ describe('PizzaOrder', function() {
   it("creates an order for a single pizza with no toppings", function() {
     var testPizzaOrder = new PizzaOrder("small");
     expect(testPizzaOrder.pizzaSize).to.equal("small");
-    expect(testPizzaOrder.toppings).to.eql([]);
+    expect(testPizzaOrder.toppings).to.eql([""]);
   });
 
   it("creates an order for a single pizza with one topping", function() {
@@ -19,7 +19,7 @@ describe('PizzaOrder', function() {
     var testTopping = new Topping("olives",1);
     testPizzaOrder.addTopping(testTopping);
     expect(testPizzaOrder.pizzaSize).to.equal("small");
-    expect(testPizzaOrder.toppings.length).to.equal(1);
+    expect(testPizzaOrder.toppings.length).to.equal(2);
   });
 
   it("creates an order for a single pizza with multiple toppings", function() {
@@ -29,21 +29,21 @@ describe('PizzaOrder', function() {
     testPizzaOrder.addTopping(testTopping);
     testPizzaOrder.addTopping(testTopping2);
     expect(testPizzaOrder.pizzaSize).to.equal("small");
-    expect(testPizzaOrder.toppings.length).to.equal(2);
+    expect(testPizzaOrder.toppings.length).to.equal(3);
   });
 });
 
 describe('PizzaOrder.totalPrice', function() {
   it("calculates the cost of an order for one pizza with no toppings", function() {
     var testPizzaOrder = new PizzaOrder("small");
-    expect(testPizzaOrder.totalPrice()).to.equal(8);
+    expect(testPizzaOrder.totalPrice()).to.equal(9);
   });
 
   it("calculates the cost of an order for one pizza with one topping", function() {
     var testPizzaOrder = new PizzaOrder("small");
     var testTopping = new Topping("olives");
     testPizzaOrder.addTopping(testTopping);
-    expect(testPizzaOrder.totalPrice()).to.equal(9);
+    expect(testPizzaOrder.totalPrice()).to.equal(10);
   });
 
   it("calculates the cost of an order for one pizza with multiple toppings", function() {
@@ -52,6 +52,6 @@ describe('PizzaOrder.totalPrice', function() {
     var testTopping2 = new Topping("pepperoni");
     testPizzaOrder.addTopping(testTopping);
     testPizzaOrder.addTopping(testTopping2);
-    expect(testPizzaOrder.totalPrice()).to.equal(12);
+    expect(testPizzaOrder.totalPrice()).to.equal(13);
   });
 });
