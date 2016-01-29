@@ -1,35 +1,77 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+
+h1 {
+  text-align: center;
+}
+
 h4 {
   text-align: center;
-}
-
-.totalCost {
-  text-align: center;
-}
-
-.checkbox {
-  font-size: 14px;
 }
 
 #pizzaForm {
   display: none;
 }
 
+/* Buttons
+===================*/
+
+.btn-success {
+  background-color: #b20000;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: white;
+  border: #b20000;
+  color: #b20000;
+}
+
+.btn-success:focus {
+  background-color: white;
+  border: #b20000;
+  color: #b20000;
+}
+
+.btn-primary {
+  background-color: white;
+  border: #b20000;
+  color: #b20000;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #f6f6f6;
+  border: #b20000;
+  color: #b20000;
+}
+
+.btn-success:focus {
+  background-color: white;
+  border: #b20000;
+  color: #b20000;
+  box-shadow: none;
+}
+
+.buttonCenter {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Styling that shows the order info and price
+===================*/
+
+.totalCost {
+  text-align: center;
+}
+
 #orderSummary {
   text-align: center;
   display: none;
   padding-bottom: 200px;
-}
-
-.startOrder {
-    margin: 0;
-    background-color: transparent;
-    text-align: center;
-    margin-top: 25px;
-}
-
-.placeOrder {
-    margin: 0;
-    background-color: transparent;
-    text-align: center;
-    margin-top: 25px;
 }
