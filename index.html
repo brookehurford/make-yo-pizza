@@ -26,32 +26,26 @@
 
       <form id="pizzaForm">
         <div class="form-group">
-          <label for="pizzaSize"></label>
+          <label for="size">What size would you like?</label>
           <select id="size" class="form-control">
-            <option value="selectOne">- Select One -</option>
-            <option value="large">Large</option>
-            <option value="medium">Medium</option>
-            <option value="small">Small</option>
+            <option value="small">Small | $8.00</option>
+            <option value="medium">Medium | $10.00</option>
+            <option value="large">Large | $12.00</option>
           </select>
         </div>
-        <div class="row" id="toppings">
-          <div class="checkbox">
-            <label><input type="checkbox" value="olives">Olives</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="mushrooms">Mushrooms</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="pepperoni">Pepperoni</label>
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="sausage">Sausage</label>
-          </div>
+
+        <div id="new-toppings">
+          <label for="toppings">TOPPINGS</label>
+          <p>All pizzas come with cheese and marinara sauce.</p>
         </div>
 
-         <button type="submit" class="btn btn-info">Place Your Order</button>
+        <button type="button" class="btn btn-default" id="add-topping">Add more toppings</button><br><br>
 
+        <div class="placeOrder">
+          <button type="submit" class="btn btn-primary">Place Your Order</button>
+        </div>
       </form>
+
       <br>
       <hr>
       <br>

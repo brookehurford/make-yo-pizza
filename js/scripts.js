@@ -48,7 +48,7 @@ $(document).ready(function() {
 	});
 
 	$("form#pizzaForm").submit(function(event) {
-		// debugger;
+
 		var inputtedSize = $("select#size").val();
 		var inputtedToppings = [];
 			$.each($('input[name="topping"]:checked'), function(){
