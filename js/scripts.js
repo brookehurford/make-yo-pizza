@@ -19,6 +19,7 @@ PizzaOrder.prototype.addTopping = function() {
 
 //Create price based on size of pizza then add cost of toppings
 PizzaOrder.prototype.totalPrice = function() {
+  debugger;
   var toppings = new Topping;
   var orderCost = 0;
   if(this.pizzaSize === "small") {
@@ -30,7 +31,7 @@ PizzaOrder.prototype.totalPrice = function() {
   }
 
   //Toppings are 1 dollar each
-  if(this.toppings.length > 0) {
+  if(this.toppings.length > 1) {
     for(var i = 0; i < this.toppings.length; i++) {
       orderCost += 1;
     }
@@ -53,24 +54,25 @@ $(document).ready(function() {
 																'<div class="form-group">' +
 																	'<select id="topping" class="form-control">' +
                                     '<option value="selectOne">- Select One-</option>' +
-                                    '<option value="extraCheese">Extra Cheese</option>' +
-                                    '<option value="ricottaCheese">Ricotta Cheese</option>' +
-                                    '<option value="fetaCheese">Feta Cheese</option>' +
-																		'<option value="olives">Olives</option>' +
-                                    '<option value="greenPeppers">Green Peppers</option>' +
-                                    '<option value="artichokes">Artichokes</option>' +
-                                    '<option value="onions">Onions</option>' +
-                                    '<option value="spinach">Spinach</option>' +
-																		'<option value="mushrooms">Mushrooms</option>' +
-																		'<option value="pepperoni">Pepperoni</option>' +
-																		'<option value="sausage">Sausage</option>' +
-                                    '<option value="canadianBacon">Canadian Bacon</option>' +
-																		'<option value="doubleMeat">Double Meat</option>' +
+                                    '<option value="extraCheese">Extra Cheese | $1.00</option>' +
+                                    '<option value="ricottaCheese">Ricotta Cheese | $1.00</option>' +
+                                    '<option value="fetaCheese">Feta Cheese | $1.00</option>' +
+																		'<option value="olives">Olives | $1.00</option>' +
+                                    '<option value="greenPeppers">Green Peppers | $1.00</option>' +
+                                    '<option value="artichokes">Artichokes | $1.00</option>' +
+                                    '<option value="onions">Onions | $1.00</option>' +
+                                    '<option value="spinach">Spinach | $1.00</option>' +
+																		'<option value="mushrooms">Mushrooms | $1.00</option>' +
+																		'<option value="pepperoni">Pepperoni | $1.00</option>' +
+																		'<option value="sausage">Sausage | $1.00</option>' +
+                                    '<option value="canadianBacon">Canadian Bacon | $1.00</option>' +
+																		'<option value="doubleMeat">Double Meat | $1.00</option>' +
 																	'</select>' +
 																'</div>')
 	});
 
 	$("form#pizzaForm").submit(function(event) {
+    debugger;
     $("#pizzaForm").hide();
 
 		var inputtedSize = $("select#size").val();

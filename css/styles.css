@@ -1,8 +1,9 @@
 body {
   background-color: black;
   color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
 }
-
 
 h1 {
   text-align: center;
@@ -20,8 +21,10 @@ h4 {
 ===================*/
 
 .btn-success {
+  margin-top: 50px;
   background-color: #b20000;
   border: none;
+  width: 50%;
 }
 
 .btn-success:hover {

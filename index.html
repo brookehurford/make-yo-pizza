@@ -7,49 +7,49 @@
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <div class="container">
       <h1>Make Yo Pizza</h1>
       <hr>
-      <!-- <div class="container-fluid">
-        <div class="row">
-  	       <img src="img/dice.jpg" class="img-responsive">
-        </div>
-      </div> -->
-
-      <div class="row orderPizza">
+      <div class="orderPizza">
         <div class="buttonCenter">
           <button type="button" class="btn btn-lg btn-success" id="startOrder" name="button">Start Your Order</button>
         </div>
       </div>
 
-      <form id="pizzaForm">
-        <div class="form-group">
-          <label for="size">What size would you like?</label>
-          <select id="size" class="form-control">
-            <option value="small">Small | $8.00</option>
-            <option value="medium">Medium | $10.00</option>
-            <option value="large">Large | $12.00</option>
-          </select>
-        </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <form id="pizzaForm">
+            <div class="form-group">
+              <label for="size">What size would you like?</label>
+              <select id="size" class="form-control">
+                <option value="small">Small | $8.00</option>
+                <option value="medium">Medium | $10.00</option>
+                <option value="large">Large | $12.00</option>
+              </select>
+            </div>
 
-        <div id="new-toppings">
-          <label id="topping">Pizza Toppings</label>
-          <p>All pizzas come with cheese and marinara sauce. Additional toppings cost $1.00 each.</p>
+            <div id="new-toppings">
+              <label id="topping">Pizza Toppings</label>
+              <p>All pizzas come with cheese and marinara sauce. Additional toppings cost $1.00 each.</p>
+            </div>
+            <div class="buttonCenter">
+              <button type="button" class="btn btn-default" id="add-topping">Add more toppings</button><br><br>
+            </div>
+            <hr>
+            <h4>When you are finished adding toppings</h4>
+            <div class="buttonCenter">
+              <button type="submit" class="btn btn-primary btn-lg">Place Your Order</button>
+            </div>
+          </form>
         </div>
-
-        <button type="button" class="btn btn-default" id="add-topping">Add more toppings</button><br><br>
-
-        <h4>When you are finished adding toppings</h4>
-        <div class="buttonCenter">
-          <button type="submit" class="btn btn-primary btn-lg">Place Your Order</button>
-        </div>
-      </form>
+      </div>
       <div id="orderSummary">
         <h2>Total cost for your pizza is $<span id="totalCost"></span>.00.</h2>
         <h1>See you soon!</h1>
-        <div>
+        <br></br>
         <iframe src="http://38.media.tumblr.com/7faf99f8db8faae4cf0f9578b59980a3/tumblr_np4lo3DGw51t3fd6go1_500.gif" width="480" height="417" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       </div>
     </div>
