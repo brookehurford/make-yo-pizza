@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Make Yo Pizza</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/jquery-2.2.0.min.js" charset="utf-8"></script>
+    <script src="js/master.js" charset="utf-8"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Make Yo Pizza<h1>
+      <hr>
+      <!-- <div class="container-fluid">
+        <div class="row">
+  	       <img src="img/dice.jpg" class="img-responsive">
+        </div>
+      </div> -->
+      <h3>Rules:</h3>
+      <ol>
+        <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+        <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+        <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+        <li>Whoever gets their total score to 50, is a bad ass - and they win!</li>
+      </ol>
+
+      <div class="row startGame">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="player1">Player 1 name</label>
+            <input type="text" name="name" value="" id="player1NameForm"  class="form-control" placeholder="Please enter name">
+          </div>
+          <div class="form-group">
+            <label for="player2">Player 2 name</label>
+            <input type="text" name="name" value="" id="player2NameForm" class="form-control" placeholder="Please enter name">
+          </div>
+          <div class="startGame">
+            <button type="button" class="btn btn-lg btn-success" id="startGame" name="button">Start Game</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </body>
+</html>
