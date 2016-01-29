@@ -24,16 +24,17 @@
         </div>
       </div>
 
-      <form class="pizzaForm">
+      <form id="pizzaForm">
         <div class="form-group">
           <label for="pizzaSize"></label>
-          <select class="form-control">
+          <select id="size" class="form-control">
+            <option value="selectOne">- Select One -</option>
             <option value="large">Large</option>
             <option value="medium">Medium</option>
             <option value="small">Small</option>
           </select>
         </div>
-        <div class="row">
+        <div class="row" id="toppings">
           <div class="checkbox">
             <label><input type="checkbox" value="olives">Olives</label>
           </div>
@@ -43,12 +44,12 @@
           <div class="checkbox">
             <label><input type="checkbox" value="pepperoni">Pepperoni</label>
           </div>
-          <div class="checkbox disabled">
+          <div class="checkbox">
             <label><input type="checkbox" value="sausage">Sausage</label>
           </div>
         </div>
 
-        <button type=submit class="btn btn-default" id="placeOrder">Place Your Order</button>
+         <button type="submit" class="btn btn-info">Place Your Order</button>
 
       </form>
       <br>
