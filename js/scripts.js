@@ -47,6 +47,19 @@ $(document).ready(function() {
 		$("#pizzaForm").fadeIn(500);
 	});
 
+	$("#add-topping").click(function() {
+		alert("hey ho")
+		$("#new-toppings").append('<div class="new-topping">' +
+																'<div class="form-group">' +
+																	'<select id="topping" class="form-control">' +
+																		'<option value="olives">Olives</option>' +
+																		'<option value="mushrooms">Mushrooms</option>' +
+																		'<option value="pepperoni">Pepperoni</option>' +
+																		'<option value="sausage">Sausage</option>' +
+																	'</select>' +
+																'</div>')
+	});
+
 	$("form#pizzaForm").submit(function(event) {
 
 		var inputtedSize = $("select#size").val();
@@ -65,27 +78,3 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 });
-//
-//
-//
-//   $("form#order").submit(function(event) {
-//     event.preventDefault();
-//
-//     var inputtedQuantity = parseInt($("input#quantity").val());
-//     var inputtedSize = $("select#size").val();
-//
-//     var newPizzaOrder = new PizzaOrder(inputtedQuantity, inputtedSize);
-//
-//     $(".new-topping").each(function() {
-//       var inputtedDescription = $(this).find("select#topping").val();
-//       var newTopping = new Topping(inputtedDescription);
-//       newPizzaOrder.addTopping();
-//     });
-//
-//     console.log(newPizzaOrder);
-//     var price = newPizzaOrder.calculatePrice();
-//     $("#result").show(function() {
-//       $("#order-price").text(price);
-//     });
-//   });
-// });
