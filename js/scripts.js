@@ -1,31 +1,17 @@
-//Business Logic
+//JavaScript
 
-function Toppings(name, addedPrice) {
-	this.name = name;
-	this.addedPrice = addedPrice;
+//Topping object:
+function Topping(toppingName, price) {
+  this.toppingName = toppingName;
 }
 
-function Pizza(pieSize, toppings, price) {
-	this.pieSize = pieSize;
-	this.toppings = [""];
-	this.price = price;
-};
-
-Pizza.prototype.basePrice = function() {
-	var price = 15;
-
-	if (this.pieSize === "large") {
-	 return price;
- 	}
-	if (this.pieSize === "small") {
-	 return price -= 5;
-	}
+//PizzaOrder object:
+function Pizza(pizzaSize, toppings) {
+  this.pizzaSize = pizzaSize;
+  this.toppings = [];
 }
-//User Interface Logic
 
-$(document).ready(function() {
-	$("#startOrder").click(function() {
-		$(".pizzaForm").show();
-
-	})
-});
+Pizza.prototype.addTopping = function() {
+  var topping = new Topping;
+  this.toppings.push(topping);
+}

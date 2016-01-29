@@ -1,21 +1,24 @@
-describe ('PizzaOrder', function() {
-  it("creates a new pizza order with the given properties", function() {
-    var testPizza = new Pizza("large", [""], 15);
-    expect(testPizza.pieSize).to.equal("large");
-    expect(testPizza.toppings).to.equal[""];
-    expect(testPizza.price).to.equal(15);
-  });
-  //
-  it("adds the baseline price method to the order", function() {
-    var testPizza = new Pizza("large", [""], 15);
-    expect(testPizza.basePrice()).to.equal(15);
+describe('Topping', function() {
+
+  it("creates a topping with a name", function() {
+    var testTopping = new Topping("olives");
+    expect(testTopping.toppingName).to.equal("olives");
   });
 });
 
-describe ('Toppings', function() {
-  it('creates a new topping with the given properties', function() {
-    var testToppings = new Toppings("pepperoni", 1);
-    expect(testToppings.name).to.equal("pepperoni");
-    expect(testToppings.addedPrice).to.equal(1);
-  })
-})
+describe('Pizza', function() {
+
+  it("creates a new order with the given properties", function() {
+    var testPizzaOrder = new Pizza("small");
+    expect(testPizzaOrder.pizzaSize).to.equal("small");
+    expect(testPizzaOrder.toppings).to.eql([]);
+  });
+
+  it("creates an order for a single pizza with one topping", function() {
+    var testPizzaOrder = new Pizza("small");
+    var testTopping = new Topping("olives", 1);
+    testPizzaOrder.addTopping(testTopping);
+    expect(testPizzaOrder.pizzaSize).to.equal("small");
+    expect(testPizzaOrder.toppings.length).to.equal(1);
+  });
+});
