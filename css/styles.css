@@ -11,6 +11,11 @@ h1 {
 
 h4 {
   text-align: center;
+  padding-top: 20px;
+}
+
+p {
+  font-size: 14px;
 }
 
 #pizzaForm {
@@ -43,13 +48,13 @@ h4 {
   background-color: white;
   border: #b20000;
   color: #b20000;
-  border: none;
+  border: solid #b20000;
 }
 
 .btn-primary:hover {
-  background-color: #f6f6f6;
-  border: #b20000;
-  color: #b20000;
+  background-color: #b20000;
+  color: white;
+  border: solid #b20000;
 }
 
 .btn-success:focus {
@@ -68,10 +73,6 @@ h4 {
 
 /* Styling that shows the order info and price
 ===================*/
-
-.totalCost {
-  text-align: center;
-}
 
 #orderSummary {
   text-align: center;

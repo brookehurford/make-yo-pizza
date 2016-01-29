@@ -30,7 +30,18 @@
                 <option value="large">Large | $12.00</option>
               </select>
             </div>
-
+            <br>
+            <label>Dietary Preferences</label>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Vegan Love!</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Vegetarian</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Gluten Free Por Favor</label>
+            </div>
+            <br>
             <div id="new-toppings">
               <label id="topping">Pizza Toppings</label>
               <p>All pizzas come with cheese and marinara sauce. Additional toppings cost $1.00 each.</p>
@@ -39,7 +50,7 @@
               <button type="button" class="btn btn-default" id="add-topping">Add more toppings</button><br><br>
             </div>
             <hr>
-            <h4>When you are finished adding toppings</h4>
+            <h4>When you are finished</h4>
             <div class="buttonCenter">
               <button type="submit" class="btn btn-primary btn-lg">Place Your Order</button>
             </div>
@@ -47,8 +58,10 @@
         </div>
       </div>
       <div id="orderSummary">
-        <h2>Total cost for your pizza is $<span id="totalCost"></span>.00.</h2>
-        <h1>See you soon!</h1>
+        <div class="totalCost">
+          <h2>Total cost for your pizza is $<span id="totalCost"></span>.00.</h2>
+          <h1>See you soon!</h1>
+        </div>
         <br></br>
         <iframe src="http://38.media.tumblr.com/7faf99f8db8faae4cf0f9578b59980a3/tumblr_np4lo3DGw51t3fd6go1_500.gif" width="480" height="417" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       </div>
