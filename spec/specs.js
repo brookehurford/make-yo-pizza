@@ -1,20 +1,18 @@
 describe('Topping', function() {
-
-  it("creates a topping with a name", function() {
+  it("creates a topping with the given properties", function() {
     var testTopping = new Topping("olives");
     expect(testTopping.toppingName).to.equal("olives");
   });
 });
 
 describe('PizzaOrder', function() {
-
-  it("creates an order for a single pizza with no toppings", function() {
+  it("will create an order for a pizza with no toppings", function() {
     var testPizzaOrder = new PizzaOrder("small");
     expect(testPizzaOrder.pizzaSize).to.equal("small");
     expect(testPizzaOrder.toppings).to.eql([""]);
   });
 
-  it("creates an order for a single pizza with one topping", function() {
+  it("will create an order for a pizza with one topping", function() {
     var testPizzaOrder = new PizzaOrder("small");
     var testTopping = new Topping("olives",1);
     testPizzaOrder.addTopping(testTopping);
@@ -22,7 +20,7 @@ describe('PizzaOrder', function() {
     expect(testPizzaOrder.toppings.length).to.equal(2);
   });
 
-  it("creates an order for a single pizza with multiple toppings", function() {
+  it("will create an order for a pizza with multiple toppings", function() {
     var testPizzaOrder = new PizzaOrder("small");
     var testTopping = new Topping("olives",1);
     var testTopping2 = new Topping("pepperoni",2);
@@ -34,19 +32,19 @@ describe('PizzaOrder', function() {
 });
 
 describe('PizzaOrder.totalPrice', function() {
-  it("calculates the cost of an order for one pizza with no toppings", function() {
+  it("outputs the price of a pizza with no toppings", function() {
     var testPizzaOrder = new PizzaOrder("small");
-    expect(testPizzaOrder.totalPrice()).to.equal(9);
+    expect(testPizzaOrder.totalPrice()).to.equal(8);
   });
 
-  it("calculates the cost of an order for one pizza with one topping", function() {
+  it("outputs the price of a pizza with one topping", function() {
     var testPizzaOrder = new PizzaOrder("small");
     var testTopping = new Topping("olives");
     testPizzaOrder.addTopping(testTopping);
     expect(testPizzaOrder.totalPrice()).to.equal(10);
   });
 
-  it("calculates the cost of an order for one pizza with multiple toppings", function() {
+  it("outputs the price of a pizza with multiple toppings", function() {
     var testPizzaOrder = new PizzaOrder("medium");
     var testTopping = new Topping("olives");
     var testTopping2 = new Topping("pepperoni");

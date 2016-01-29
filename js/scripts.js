@@ -1,11 +1,9 @@
-//Business Logic
+//BUSINESS LOGIC
 
-//Topping object
 function Topping(toppingName, price) {
   this.toppingName = toppingName;
 }
 
-//PizzaOrder object
 function PizzaOrder(pizzaSize) {
   this.pizzaSize = pizzaSize;
   this.toppings = [""];
@@ -17,9 +15,8 @@ PizzaOrder.prototype.addTopping = function() {
   this.toppings.push(toppings);
 }
 
-//Create price based on size of pizza then add cost of toppings
+//Create the price based on the size of the pizza, and how many toppings are added.
 PizzaOrder.prototype.totalPrice = function() {
-  debugger;
   var toppings = new Topping;
   var orderCost = 0;
   if(this.pizzaSize === "small") {
@@ -29,24 +26,22 @@ PizzaOrder.prototype.totalPrice = function() {
   } else {
     orderCost += 12;
   }
-
-  //Toppings are 1 dollar each
+  //Loop to add one dollar each time a topping is added
   if(this.toppings.length > 1) {
     for(var i = 0; i < this.toppings.length; i++) {
       orderCost += 1;
     }
   }
-
   var finalPrice = orderCost;
   return finalPrice;
 }
 
-//User Interface Logic
+//USER INTERFACE LOGIC
 
 $(document).ready(function() {
 	$("#startOrder").click(function() {
 		$("#startOrder").hide();
-		$("#pizzaForm").fadeIn(500);
+		$("#pizzaForm").fadeIn(1000);
 	});
 
 	$("#add-topping").click(function() {
@@ -72,12 +67,12 @@ $(document).ready(function() {
 	});
 
 	$("form#pizzaForm").submit(function(event) {
-    debugger;
     $("#pizzaForm").hide();
 
 		var inputtedSize = $("select#size").val();
 		var newPizzaOrder = new PizzaOrder(inputtedSize);
 
+    //This adds the topping to the Pizza object to be counted as an added topping
 		$("#new-toppings").each(function() {
 			var inputtedName = $(this).find("select#topping").val();
 			var newTopping = new Topping(inputtedName);
@@ -88,10 +83,6 @@ $(document).ready(function() {
 		$("#orderSummary").show(function() {
 			$("#totalCost").text(price);
 		});
-
-		if (inputtedSize === "selectOne") {
-			alert("Please select a size");
-		}
 
 		event.preventDefault();
 	});
