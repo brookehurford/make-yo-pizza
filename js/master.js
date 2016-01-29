@@ -1,20 +1,24 @@
-function Pizza(pieSize, toppings) {
+function Pizza(pieSize, toppings, price) {
 	this.pieSize = pieSize;
 	this.toppings = [""];
+	this.price = price;
 };
 
-function Toppings(name, addedPrice) {
-	this.name = name;
-	this.addedPrice = addedPrice;
-}
+// Pizza.prototype.totalPrice = function() {
+// 	if (testPizza.toppings === ["pepperoni"]) {
+// 		return this.price + this.addedPrice;
+// 	}
+// }
 
-Pizza.prototype.price = function() {
-	var price = 15;
+// this.toppings = this.totalPrice
 
-	if (this.pieSize === "Large") {
-	 return price;
- 	}
-	if (this.pieSize === "small") {
-	 return price -= 5;
-	}
-}
+// Pizza.prototype.basePrice = function() {
+// 	var price = 15;
+//
+// 	if (this.pieSize === "large") {
+// 	 return price;
+//  	}
+// 	if (this.pieSize === "small") {
+// 	 return price -= 5;
+// 	}
+// }
