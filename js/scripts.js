@@ -8,17 +8,17 @@ function Topping(toppingName, price) {
 //PizzaOrder object:
 function PizzaOrder(pizzaSize) {
   this.pizzaSize = pizzaSize;
-  this.toppings = [];
+  this.toppings = [""];
 }
 
 PizzaOrder.prototype.addTopping = function() {
-  var topping = new Topping;
-  this.toppings.push(topping);
+  var toppings = new Topping;
+  this.toppings.push(toppings);
 }
 
-//Pizza size determines base price -> add toppings -> multiply by quantity
+//Create price based on size of pizza then add cost of toppings
 PizzaOrder.prototype.totalPrice = function() {
-  var topping = new Topping;
+  var toppings = new Topping;
   var orderCost = 0;
   if(this.pizzaSize === "small") {
     orderCost += 8;
@@ -30,7 +30,9 @@ PizzaOrder.prototype.totalPrice = function() {
 
   //Toppings are $1.00 each. Use for loop so changing price per topping is easier.
   if(this.toppings.length > 0) {
-    for(var i = 1; i <= this.toppings.length; i++) {
+    console.log(this.toppings.length);
+    debugger;
+    for(var i = 0; i < this.toppings.length; i++) {
       orderCost += 1;
     }
   }
@@ -48,8 +50,7 @@ $(document).ready(function() {
 	});
 
 	$("#add-topping").click(function() {
-		alert("hey ho")
-		$("#new-toppings").append('<div class="new-topping">' +
+		$("#new-toppings").append('<div class="new-toppings">' +
 																'<div class="form-group">' +
 																	'<select id="topping" class="form-control">' +
 																		'<option value="olives">Olives</option>' +
@@ -63,13 +64,18 @@ $(document).ready(function() {
 	$("form#pizzaForm").submit(function(event) {
 
 		var inputtedSize = $("select#size").val();
-		var inputtedToppings = [];
-			$.each($('input[name="topping"]:checked'), function(){
-				inputtedToppings.push($(this).val());
+		var newPizzaOrder = new PizzaOrder(inputtedSize);
+
+		$("#new-toppings").each(function() {
+			var inputtedName = $(this).find("select#topping").val();
+			var newTopping = new Topping(inputtedName);
+			return newPizzaOrder.addTopping();
 		})
 
-		var newPizzaOrder = new PizzaOrder(inputtedSize, inputtedToppings);
 		var price = newPizzaOrder.totalPrice();
+		$("#orderSummary").show(function() {
+			$("#totalCost").text(price);
+		});
 
 		if (inputtedSize === "selectOne") {
 			alert("Please select a size");

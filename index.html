@@ -35,22 +35,24 @@
         </div>
 
         <div id="new-toppings">
-          <label for="toppings">TOPPINGS</label>
+          <label id="topping">TOPPINGS</label>
           <p>All pizzas come with cheese and marinara sauce.</p>
         </div>
 
         <button type="button" class="btn btn-default" id="add-topping">Add more toppings</button><br><br>
 
+        <h4>When you are finished adding toppings</h4>
         <div class="placeOrder">
-          <button type="submit" class="btn btn-primary">Place Your Order</button>
+          <button type="submit" class="btn btn-primary btn-lg">Place Your Order</button>
         </div>
       </form>
 
       <br>
       <hr>
       <br>
-      <div class="orderSummary">
-        <span class="totalCost">$$$</span>
+      <div id="orderSummary">
+        <h2>Total cost for your pizza is $<span id="totalCost"></span>.00.</h2>
+        <h1>See you soon!</h1>
       </div>
     </div>
   </body>

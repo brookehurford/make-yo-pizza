@@ -1,3 +1,7 @@
+h4 {
+  text-align: center;
+}
+
 .totalCost {
   text-align: center;
 }
@@ -8,6 +12,12 @@
 
 #pizzaForm {
   display: none;
+}
+
+#orderSummary {
+  text-align: center;
+  display: none;
+  padding-bottom: 200px;
 }
 
 .startOrder {
