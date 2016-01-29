@@ -38,3 +38,19 @@ PizzaOrder.prototype.totalPrice = function() {
   var finalPrice = orderCost;
   return finalPrice;
 }
+
+//User Interface Logic
+
+$(document).ready(function() {
+	$("#startOrder").click(function() {
+		$("#startOrder").hide();
+		$(".pizzaForm").fadeIn(500);
+	})
+
+	$("#placeOrder").click(function() {
+
+		var inputtedSize = $("select#size").val();
+
+	})
+
+});

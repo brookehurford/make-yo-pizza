@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>Make Yo Pizza</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" href="css/styles.css" media="screen">
@@ -11,7 +10,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Make Yo Pizza<h1>
+      <h1>Make Yo Pizza</h1>
       <hr>
       <!-- <div class="container-fluid">
         <div class="row">
@@ -29,29 +28,35 @@
         <div class="form-group">
           <label for="pizzaSize"></label>
           <select class="form-control">
-            <option id="largePizza" value="largePizza">Large</option>
-            <option id="smallPizza" value="smallPizza">Small</option>
+            <option value="large">Large</option>
+            <option value="medium">Medium</option>
+            <option value="small">Small</option>
           </select>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <div class="checkbox">
-              <label><input type="checkbox" value="olives">Olives</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="mushrooms">Mushrooms</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="pepperoni">Pepperoni</label>
-            </div>
-            <div class="checkbox disabled">
-              <label><input type="checkbox" value="sausage">Sausage</label>
-            </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="olives">Olives</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="mushrooms">Mushrooms</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="pepperoni">Pepperoni</label>
+          </div>
+          <div class="checkbox disabled">
+            <label><input type="checkbox" value="sausage">Sausage</label>
           </div>
         </div>
+
+        <button type=submit class="btn btn-default" id="placeOrder">Place Your Order</button>
+
       </form>
-
-
+      <br>
+      <hr>
+      <br>
+      <div class="orderSummary">
+        <span class="totalCost">$$$</span>
+      </div>
     </div>
   </body>
 </html>
