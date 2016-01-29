@@ -1,0 +1,18 @@
+/*h1 {
+  text-align: center;
+}*/
+
+.checkbox {
+  font-size: 14px;
+}
+
+.pizzaForm {
+  display: none;
+}
+
+.startOrder {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 25px;
+}

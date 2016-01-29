@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Make Yo Pizza</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/master.css">
-    <script src="js/jquery-2.2.0.min.js" charset="utf-8"></script>
-    <script src="js/master.js" charset="utf-8"></script>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/styles.css" media="screen">
+    <script src="js/jquery-1.12.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
   </head>
   <body>
     <div class="container">
@@ -25,21 +25,32 @@
         </div>
       </div>
 
-      <!-- <div class="row startGame">
-        <form class="form-inline">
-          <div class="form-group">
-            <label for="player1">Player 1 name</label>
-            <input type="text" name="name" value="" id="player1NameForm"  class="form-control" placeholder="Please enter name">
+      <form class="pizzaForm">
+        <div class="form-group">
+          <label for="pizzaSize"></label>
+          <select class="form-control">
+            <option>Large</option>
+            <option>Small</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="checkbox">
+              <label><input type="checkbox" value="olives">Olives</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="mushrooms">Mushrooms</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="pepperoni">Pepperoni</label>
+            </div>
+            <div class="checkbox disabled">
+              <label><input type="checkbox" value="sausage">Sausage</label>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="player2">Player 2 name</label>
-            <input type="text" name="name" value="" id="player2NameForm" class="form-control" placeholder="Please enter name">
-          </div>
-          <div class="startGame">
-            <button type="button" class="btn btn-lg btn-success" id="startGame" name="button">Start Game</button>
-          </div>
-        </form>
-      </div> -->
+        </div>
+      </form>
+
 
     </div>
   </body>

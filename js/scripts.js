@@ -1,3 +1,5 @@
+//Business Logic
+
 function Toppings(name, addedPrice) {
 	this.name = name;
 	this.addedPrice = addedPrice;
@@ -19,3 +21,11 @@ Pizza.prototype.basePrice = function() {
 	 return price -= 5;
 	}
 }
+//User Interface Logic
+
+$(document).ready(function() {
+	$("#startOrder").click(function() {
+		$(".pizzaForm").show();
+
+	})
+});
