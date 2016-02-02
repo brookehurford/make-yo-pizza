@@ -1,23 +1,23 @@
 //BUSINESS LOGIC
 
-function Topping(toppingName, price) {
+function Topping(toppingName) {
   this.toppingName = toppingName;
 }
 
 function PizzaOrder(pizzaSize) {
   this.pizzaSize = pizzaSize;
-  this.toppings = [""];
+  this.toppings = [];
 }
 
 //Create the array of toppings
 PizzaOrder.prototype.addTopping = function() {
-  var toppings = new Topping;
-  this.toppings.push(toppings);
+  var topping = new Topping();
+  this.toppings.push(topping);
 }
 
 //Create the price based on the size of the pizza, and how many toppings are added.
 PizzaOrder.prototype.totalPrice = function() {
-  var toppings = new Topping;
+  var topping = new Topping;
   var orderCost = 0;
   if(this.pizzaSize === "small") {
     orderCost += 8;
@@ -27,13 +27,13 @@ PizzaOrder.prototype.totalPrice = function() {
     orderCost += 12;
   }
   //Loop to add one dollar each time a topping is added
-  if(this.toppings.length > 1) {
-    for(var i = 0; i < this.toppings.length; i++) {
+  if(this.toppings.length > 0) {
+    debugger;
+    for(var i = 1; i <= this.toppings.length; i++) {
       orderCost += 1;
     }
   }
-  var finalPrice = orderCost;
-  return finalPrice;
+  return orderCost;
 }
 
 //USER INTERFACE LOGIC
@@ -47,7 +47,7 @@ $(document).ready(function() {
 	$("#add-topping").click(function() {
 		$("#new-toppings").append('<div class="new-toppings">' +
 																'<div class="form-group">' +
-																	'<select id="topping" class="form-control">' +
+																	'<select id="added-toppings" class="form-control">' +
                                     '<option value="selectOne">- Select One-</option>' +
                                     '<option value="extraCheese">Extra Cheese | $1.00</option>' +
                                     '<option value="ricottaCheese">Ricotta Cheese | $1.00</option>' +
@@ -67,15 +67,16 @@ $(document).ready(function() {
 	});
 
 	$("form#pizzaForm").submit(function(event) {
+    debugger;
     $("#pizzaForm").hide();
 
 		var inputtedSize = $("select#size").val();
-		var newPizzaOrder = new PizzaOrder(inputtedSize);
+		var newPizzaOrder = new PizzaOrder(inputtedSize, 0);
 
     //This adds the topping to the Pizza object to be counted as an added topping
-		$("#new-toppings").each(function() {
-			var inputtedName = $(this).find("select#topping").val();
-			var newTopping = new Topping(inputtedName);
+		$(".new-toppings").each(function() {
+			var inputtedName = $(this).find("select#added-toppings").val();
+      var newTopping = new Topping(inputtedName, 0);
 			return newPizzaOrder.addTopping();
 		})
 
